@@ -1,17 +1,44 @@
 package institution;
 
 import person.Student;
+import java.util.*;
 
 public class University {
+	private String name;
+    private Collection<Student> students;
+
     public University(String name) {
-        //TODO: Implementation is needed
+        this.name = name;
+        this.students = new ArrayList<Student>();
     }
 
+
+    /**
+    Update specific student knowledge
+    */
     public void setStudent(Student student) {
-        //TODO: Implementation is needed
+        for (Student s: this.students){
+            if (s.getName() == student.getName()){
+                s.setKnowledge(student.getKnowledge());
+                System.out.println(s.getKnowledge().getKnowledge());
+            }
+        }
     }
 
     public void addStudent(Student student) {
-        //TODO: Implementation is needed
+        this.students.add(student);
+    }
+
+    public Collection<Student> getStudents() {
+        return this.students;
+    }
+
+    public float getAvgKnowledge(){
+        float avg = 0;
+        for (Student s: this.getStudents()){
+            avg += s.getKnowledge().getKnowledge();
+        }
+        avg /= this.getStudents().size(); 
+        return avg;
     }
 }

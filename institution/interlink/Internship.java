@@ -1,18 +1,22 @@
 package institution.interlink;
 
 import person.Student;
+import java.util.*;
 
 public class Internship {
+    private String name;
+    private Collection<Student> students;
+
     public Internship(String name) {
-        //TODO: Implementation is needed
+        this.name = name;
+        this.students = new ArrayList<Student>();
     }
 
     public void setStudent(Student student) {
-        //TODO: Implementation is needed
+        this.students.add(student);
     }
 
-    public String getStudents() {
-        //TODO: Implementation is needed
-        return "Andrew Maslenko\nJulia Veselkina\n";
+    public Collection<Student> getStudents() {
+        return this.students;
     }
 }
